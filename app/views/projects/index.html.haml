@@ -1,0 +1,21 @@
+
+%h2 Get a new project
+= render 'form'
+
+%h2 Existing projects
+%table
+  %tr
+    %th Project ID
+    %th Name
+    %th Hashed ID
+    %th Videos
+    %th Actions
+  - @projects.reverse_each do |project|
+    %tr
+      %td= project.id
+      %td= project.name
+      %td= project.hashed_id
+      %td= project.video_count
+      %td
+        = link_to "Fetch & Add file URLs", fetch_video_urls_from_wistia_path(project), method: :post
+        = link_to "Download CSV", "#{request.base_url}/download/#{project.id}.csv"

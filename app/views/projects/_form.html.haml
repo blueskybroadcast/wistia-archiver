@@ -1,0 +1,5 @@
+= form_for @project, url: fetch_project_from_wistia_path do |f|
+  = f.label :hashed_id, "Enter a Project's hashedId"
+  = f.text_field :hashed_id
+
+  = f.submit "Fetch details from Wistia"
