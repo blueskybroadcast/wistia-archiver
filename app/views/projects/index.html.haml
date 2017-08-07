@@ -17,6 +17,8 @@
       %td= project.hashed_id
       %td= project.video_count
       %td
-        = link_to "Fetch & Add file URLs", fetch_video_urls_from_wistia_path(project), method: :post
+        = link_to "Fetch & Add file URLs", fetch_video_urls_from_wistia_path(project), method: :post, data: { confirm: "Due to Wistia's rate limit, this will take at least #{Time.at(project.video_count*0.7).utc.strftime('%H hours, %M minutes, and %S seconds')}. Click OK to start a background job."}
+        |
         = link_to "Download CSV", "#{request.base_url}/download/#{project.id}.csv"
+        |
         = link_to "Delete", projects_delete_path(project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'delete'
