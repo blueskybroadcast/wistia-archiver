@@ -19,3 +19,4 @@
       %td
         = link_to "Fetch & Add file URLs", fetch_video_urls_from_wistia_path(project), method: :post
         = link_to "Download CSV", "#{request.base_url}/download/#{project.id}.csv"
+        = link_to "Delete", projects_delete_path(project), method: :delete, data: { confirm: 'Are you sure?'}, class: 'delete'

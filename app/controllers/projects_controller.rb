@@ -46,6 +46,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    if Project.find(params[:id]).destroy
+      flash[:success] = "Project was deleted"
+      redirect_to '/'
+    else
+      flash[:error] = "Error deleting project"
+    end
+  end
+
   private
 
   def call_wistia_with_hashed_id(resource, hashed_id)

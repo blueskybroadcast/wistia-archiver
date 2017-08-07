@@ -27,3 +27,7 @@
 .flash.error {
   background:rgb(214,73,78);
 }
+
+a.delete {
+  color:rgb(214,73,78);
+}
