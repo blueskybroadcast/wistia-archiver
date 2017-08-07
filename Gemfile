@@ -11,6 +11,7 @@ end
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rest-client'
 gem 'haml', git: 'https://github.com/haml/haml'
+gem 'sidekiq'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
